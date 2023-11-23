@@ -34,8 +34,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+// selecting our elements
+var jokeText = document.getElementsByClassName("joke-H2")[0];
+var jokeButton = document.getElementsByClassName("other-Joke")[0];
+var loadingAnimation = document.getElementsByClassName("loading-Animation")[0];
 // getting our api key
 var apiKey = "https://icanhazdadjoke.com";
+loadingAnimation.style.display = "none";
 // fechting our api text
 function getJoke(apiKey) {
     return __awaiter(this, void 0, void 0, function () {
@@ -43,30 +48,42 @@ function getJoke(apiKey) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 3, , 4]);
+                    loadingAnimation.style.display = "flex";
+                    jokeText.textContent = "";
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 4, , 5]);
                     return [4 /*yield*/, fetch(apiKey, {
                             headers: {
                                 Accept: "text/plain",
                             },
                         })];
-                case 1:
+                case 2:
                     response = _a.sent();
                     // if ip has errors throw this text
                     if (!response.ok) {
                         throw new Error("Failed to fetch joke. Status: ".concat(response.status));
                     }
                     return [4 /*yield*/, response.text()];
-                case 2:
-                    data = _a.sent();
-                    console.log(data);
-                    return [3 /*break*/, 4];
                 case 3:
+                    data = _a.sent();
+                    loadingAnimation.style.display = "none";
+                    showTextFunc(data);
+                    return [3 /*break*/, 5];
+                case 4:
                     error_1 = _a.sent();
                     console.log("There is an error: ", error_1);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/];
             }
         });
     });
 }
+// our functions
+var showTextFunc = function (data) {
+    jokeText.textContent = data;
+};
+// our event lisnters
+jokeButton.addEventListener("click", function () { return getJoke(apiKey); });
+// running the code one time when entering the website
 getJoke(apiKey);

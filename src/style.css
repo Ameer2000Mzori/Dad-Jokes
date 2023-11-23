@@ -39,6 +39,10 @@ body {
   font-weight: 600;
 }
 
+.header .jokes-Wrapper .loading-Animation {
+  height: 150px;
+}
+
 .header .jokes-Wrapper button {
   padding: 10px 20px;
   font-size: 15px;

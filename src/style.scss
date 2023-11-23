@@ -58,4 +58,12 @@ body {
       color: white;
     }
   }
+
+  @media screen and (max-width: 769px) {
+    .jokes-Wrapper {
+      height: 330px;
+      width: 300px;
+      margin: 5px;
+    }
+  }
 }

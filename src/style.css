@@ -6,4 +6,56 @@ body {
   margin: 0;
 }
 
-/*# sourceMappingURL=style.css.map */
+.header {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 238, 255, 0.555);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .jokes-Wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 230px;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.header .jokes-Wrapper h5 {
+  color: gray;
+}
+
+.header .jokes-Wrapper h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.header .jokes-Wrapper button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 15px;
+  border-style: none;
+  background-color: rgb(214, 127, 255);
+  color: white;
+}
+
+.header .jokes-Wrapper :hover {
+  background-color: rgba(214, 127, 255, 0.363);
+  color: rgb(80, 80, 80);
+  cursor: pointer;
+}
+
+.header .jokes-Wrapper :active {
+  background-color: rgb(214, 127, 255);
+  color: white;
+}
